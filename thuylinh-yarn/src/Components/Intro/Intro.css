@@ -31,16 +31,16 @@
   margin-top: 1rem;
 }
 .i-button {
-  width: 7rem;
-  height: 3rem;
+  width: 8rem;
+  height: 4rem;
 }
 .i-icons {
   margin-top: 1rem;
   display: flex;
   gap: 0rem;
 }
-.i-icons img {
-  width: 7rem;
+.i-icons > img {
+  width: 7.5rem;
   height: 7rem;
 }
 .i-icons > * {
