@@ -7,14 +7,24 @@ import Sidebar from "../../Images/sidebar.jpg";
 import Ecomerce from "../../Images/ecomerce.png";
 import Musicapp from "../../Images/musicapp.jpg";
 import Hoc from "../../Images/hoc.jpg";
+import { themeContext } from "../../Context";
+import { useContext } from "react";
 // import swiper/css để định dạng css cho cái slide -------
 import "swiper/css";
 
 const Portfolio = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
-    <div className="portfolio">
+    <div className="portfolio" id="Portfolio">
       {/* heading */}
-      <span>Recent Project</span>
+      <span
+        style={{
+          color: darkMode ? "white" : "",
+        }}
+      >
+        Recent Project
+      </span>
       <span>Portfolio</span>
       {/* slider */}
       <Swiper

@@ -32,11 +32,11 @@ const Testimonials = () => {
     },
   ];
   return (
-    <div className="t-wrapper">
+    <div className="t-wrapper" id="Testimonials">
       {/* heading */}
       <div className="t-heading">
-        <span>Clients always get</span>
-        <span>Exceptional Work</span>
+        <span>Clients always get </span>
+        <span>Exceptional Work </span>
         <span>From me...</span>
         <div
           className="blur t-blur1"

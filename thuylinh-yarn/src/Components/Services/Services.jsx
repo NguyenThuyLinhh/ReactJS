@@ -5,12 +5,27 @@ import Glasses from "../../Images/glasses.png";
 import Humble from "../../Images/humble.png";
 import Card from "../Card/Card";
 import Resume from "./NGUYEN-THI-THUY-LINH.pdf";
+import { themeContext } from "../../Context";
+import { useContext } from "react";
+import { motion } from "framer-motion";
+
 const Services = () => {
+  // khai bao cho lệnh import {motion}
+  const transition = { duration: 2, type: "spring" };
+  // khai bao cho lệnh import  { themeContext }
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
-    <div className="services">
+    <div className="services" id="Services">
       {/* left side */}
       <div className="awesome">
-        <span>My Awesome</span>
+        <span
+          style={{
+            color: darkMode ? "white" : "",
+          }}
+        >
+          My Awesome
+        </span>
         <span>services</span>
         <spane>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -27,28 +42,43 @@ const Services = () => {
       </div>
       {/* right side */}
       <div className="cards">
-        <div style={{ left: "18rem" }}>
+        <motion.div
+          initial={{ left: "25%" }}
+          whileInView={{ left: "14rem" }}
+          transition={transition}
+          style={{ left: "18rem" }}
+        >
           <Card
             emoij={Emoij}
             heading={"Design"}
             detail={"Figma, Sketch, Photoshop, AdobeXD"}
           />
-        </div>
+        </motion.div>
         {/* second card */}
-        <div style={{ top: "13rem", left: "-7rem" }}>
+        <motion.div
+          initial={{ left: "-20rem" }}
+          whileInView={{ left: "-5rem" }}
+          transition={transition}
+          style={{ top: "13rem", left: "-7rem" }}
+        >
           <Card
             emoij={Glasses}
             heading={"Developer"}
-            detail={"HTML, CSS, JAVASCRIPT, REACTJS, PHP(Basic)"}
+            detail={"HTML, CSS, JAVASCRIPT, REACTJS, PHP(Basic), Figma"}
           />
-        </div>
-        <div style={{ top: "25rem", left: "12rem" }}>
+        </motion.div>
+        <motion.div
+          initial={{ right: "25%" }}
+          whileInView={{ left: "14rem" }}
+          transition={transition}
+          style={{ top: "25rem", left: "12rem" }}
+        >
           <Card
             emoij={Humble}
             heading={"UI/UX"}
             detail={"Lorem, ipsum dolor sit amet consectetur adipisicing elit."}
           />
-        </div>
+        </motion.div>
         {/* tạo những đốm màu */}
         <div
           className="blur s-blur2"
